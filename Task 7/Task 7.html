@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Feedback System</title>
+</head>
+
+<body bgcolor="lavender">
+
+<center>
+
+<h1><u>Shopping Feedback System</u></h1>
+
+<h2><i>Hiroto Shopping Mall</i></h2>
+
+<p><b>Our Featured Products</b></p>
+
+<table cellpadding="15">
+<tr>
+
+<td align="center">
+<img src="watch.jpg" width="150" height="150"><br><br>
+<b>Smart Watch</b><br>
+₹1,999
+</td>
+
+<td align="center">
+<img src="shoes.jpg" width="150" height="150"><br><br>
+<b>Sports Shoes</b><br>
+₹2,299
+</td>
+
+<td align="center">
+<img src="headphone.jpg" width="150" height="150"><br><br>
+<b>Wireless Headphones</b><br>
+₹1,009
+</td>
+
+<td align="center">
+<img src="bag.jpg" width="150" height="150"><br><br>
+<b>Travel Backpack</b><br>
+₹999
+</td>
+
+</tr>
+</table>
+
+<br>
+
+<p><i>Thank you for shopping with us!</i></p>
+
+<button onclick="shoppingFeedback()">Give Feedback</button>
+
+<p id="result"></p>
+
+</center>
+
+<script>
+
+function shoppingFeedback()
+{
+    alert("Thank you for shopping at Hiroto Shopping Mall!");
+
+    var satisfied = confirm("Were you satisfied with your shopping experience?");
+
+    if(satisfied == true)
+    {
+        var feedback = prompt("What did you like the most about our store?");
+
+        if(feedback != null && feedback != "")
+        {
+            alert("Thank you for your valuable feedback!");
+
+            document.getElementById("result").innerHTML =
+            "<h3>Feedback Submitted Successfully</h3>" +
+        
+            "<b>Store:</b> Hiroto Shopping Mall<br>" +
+            "<b>Status:</b> Satisfied Customer<br>" +
+            "<b>Feedback:</b> " + feedback;
+        }
+        else
+        {
+            alert("Feedback submitted without comments.");
+
+            document.getElementById("result").innerHTML =
+            "<h3>Feedback Submitted</h3>" +
+            "You were satisfied with your shopping experience.";
+        }
+    }
+    else
+    {
+        var suggestion = prompt("Please tell us how we can improve your shopping experience.");
+
+        alert("Thank you! We will work on your suggestions.");
+
+        document.getElementById("result").innerHTML =
+        "<h3>Customer Suggestion</h3>" +
+        "<b>Status:</b> Not Satisfied<br>" +
+        "<b>Suggestion:</b> " + suggestion;
+    }
+
+}
+
+</script>
+
+</body>
+</html>

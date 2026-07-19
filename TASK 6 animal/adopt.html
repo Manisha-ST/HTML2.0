@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Adoption Form</title>
+
+<script>
+
+function validateForm()
+{
+    var name = document.forms["adopt"]["name"].value;
+    var email = document.forms["adopt"]["email"].value;
+    var phone = document.forms["adopt"]["phone"].value;
+
+    if(name=="")
+    {
+        document.getElementById("msg").innerHTML="Please enter your name.";
+        return false;
+    }
+
+    if(email=="")
+    {
+        document.getElementById("msg").innerHTML="Please enter your email.";
+        return false;
+    }
+
+    if(email.indexOf("@")==-1)
+    {
+        document.getElementById("msg").innerHTML="Enter a valid email.";
+        return false;
+    }
+
+    if(phone.length!=10)
+    {
+        document.getElementById("msg").innerHTML="Phone number must be 10 digits.";
+        return false;
+    }
+
+    document.getElementById("msg").innerHTML="";
+
+    return confirm("Do you want to submit the adoption application?");
+}
+
+</script>
+
+</head>
+
+<body bgcolor="lightpink">
+
+<center>
+
+<h2>Animal Adoption Form</h2>
+
+<form name="adopt" onsubmit="return validateForm()">
+
+Name:<br>
+<input type="text" name="name"><br><br>
+
+Email:<br>
+<input type="text" name="email"><br><br>
+
+Phone Number:<br>
+<input type="text" name="phone"><br><br>
+
+Preferred Animal:<br>
+
+<select name="animal">
+<option>Dog</option>
+<option>Cat</option>
+<option>Rabbit</option>
+</select>
+
+<br><br>
+
+Reason for Adoption:<br>
+
+<textarea rows="4" cols="30"></textarea>
+
+<br><br>
+
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+
+</form>
+
+<br>
+
+<p id="msg"></p>
+
+</center>
+
+</body>
+
+</html>

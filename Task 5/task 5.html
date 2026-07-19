@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<body bgcolor="lightpink">
+
+<center>
+
+<font color="darkblue">
+<h1>Tour Booking Form</h1>
+</font>
+
+<form>
+
+Name:
+<input type="text"><br><br>
+
+Email:
+<input type="email"><br><br>
+
+Password:
+<input type="password"><br><br>
+
+Address:
+<textarea rows="4" cols="25"></textarea><br><br>
+
+Gender:
+<input type="radio" name="gender">Male
+<input type="radio" name="gender">Female
+<input type="radio" name="gender">Other
+<br><br>
+
+Places to Visit:
+<input type="checkbox">Ooty
+<input type="checkbox">Kodaikanal
+<input type="checkbox">Goa
+<input type="checkbox">Munnar
+<br><br>
+
+Package:
+<select>
+<option>Select Package</option>
+<option>1 Day</option>
+<option>2 Days</option>
+<option>3 Days</option>
+<option>5 Days</option>
+</select>
+<br><br>
+
+Upload ID Proof:
+<input type="file"><br><br>
+
+<input type="submit" value="Book Tour">
+<input type="reset" value="Reset">
+<input type="button" value="Contact Us"
+onclick="document.getElementById('contact').innerHTML='Phone: +91 9876543210';">
+
+</form>
+
+<br>
+
+<font color="red">
+<p id="contact"></p>
+</font>
+
+</center>
+
+</body>
+</html>
